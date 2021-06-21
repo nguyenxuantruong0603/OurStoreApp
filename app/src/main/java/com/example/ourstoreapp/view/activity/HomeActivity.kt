@@ -20,7 +20,7 @@ class HomeActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_shop, R.id.navigation_explore, R.id.navigation_cart
+                R.id.navigation_shop, R.id.navigation_explore, R.id.navigation_cart,R.id.navigation_account,R.id.navigation_favourite
             )
         )
 //        cái này là cái ToolBar đ cần dùng đến nó nên comment nó lại

@@ -1,27 +1,37 @@
 package com.example.ourstoreapp.view.fragment.shop
 
 import android.os.Bundle
-import android.util.Log
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.ourstoreapp.R
-import com.example.ourstoreapp.adapter.ImageSlideShowAdapter
+import com.example.ourstoreapp.adapter.ViewPagerAdapter
+import com.example.ourstoreapp.databinding.FragmentShopBinding
+import com.example.ourstoreapp.datamodel.Banner
 import kotlinx.android.synthetic.main.fragment_shop.*
+import java.util.*
 
 class ShopFragment : Fragment() {
 
     private lateinit var shopViewModel: ShopViewModel
-    private lateinit var imageSlideShowAdapter: ImageSlideShowAdapter
-    private var listImage = intArrayOf(
-        R.drawable.logo1,
-        R.drawable.logo2,
-        R.drawable.logo3,
-        R.drawable.logo4,
-        R.drawable.logo5
+    private lateinit var viewPagerAdapter: ViewPagerAdapter
+    private var timer = Timer()
+    private lateinit var binding: FragmentShopBinding
+    private var currentItem: Int = 0
+    private var totalItem: Int = 0
+    private val listImage = listOf(
+        Banner(R.drawable.logo1),
+        Banner(R.drawable.logo2),
+        Banner(R.drawable.logo3),
+        Banner(R.drawable.logo4),
+        Banner(R.drawable.logo5)
+
     )
 
     override fun onCreateView(
@@ -29,39 +39,45 @@ class ShopFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_shop, container, false)
 
         shopViewModel =
             ViewModelProvider(this).get(ShopViewModel::class.java)
-        val view = inflater.inflate(R.layout.fragment_shop, container, false)
 
         shopViewModel.title.observe(viewLifecycleOwner, Observer {
             tvLocation.text = it
         })
 
-        imageSlideShowAdapter = ImageSlideShowAdapter(requireContext(),listImage)
+        viewPagerAdapter = ViewPagerAdapter(listImage)
+        binding.vpBannerSale.adapter = viewPagerAdapter
+        binding.indicator.setViewPager(binding.vpBannerSale)
+        viewPagerAdapter.registerDataSetObserver(binding.indicator.dataSetObserver)
 
+        autoSlideImage()
 
-        //       vpBannerSale.adapter = imageSlideShowAdapter
-        listImage.forEach {
-
-            Log.e("LIST", it.toString())
-
-
-
-        //vfImage(it)
-
-        }
-
-        return view
+        return binding.root
     }
 
-//
-//    private fun vfImage(image: Int) {
-//
-//        val imageView = ImageView(context)
-//        imageView.setBackgroundResource(image)
-//
-//    }
+    private fun autoSlideImage() {
+        if (listImage.isEmpty() || vpBannerSale == null) {
+            return
+        }
 
+        timer.schedule(object : TimerTask() {
+            override fun run() {
+                Handler(Looper.getMainLooper()).post {
+                    currentItem = binding.vpBannerSale.currentItem
+                    totalItem = listImage.size - 1
+                    if (currentItem < totalItem) {
+                        currentItem += 1
+                        binding.vpBannerSale.currentItem = currentItem
+                    } else {
+                        binding.vpBannerSale.currentItem = 0
+                    }
+                }
+            }
+        }, 500, 3000)
 
+    }
 }
