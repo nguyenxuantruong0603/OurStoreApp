@@ -11,4 +11,10 @@
     <string name="title_cart">Cart</string>
     <string name="title_favourite">Favourite</string>
     <string name="title_account">Account</string>
+    <string name="get_your_grocer">Get your groceries with nectar</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="enter_your_credentials_to_continue">Enter your credentials to continue</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
 </resources>

@@ -5,7 +5,12 @@
 
     <data>
 
+        <variable
+            name="isShowView"
+            type="Boolean" />
+
         <import type="android.view.View" />
+
         <variable
             name="account"
             type="com.example.ourstoreapp.view.activity.account.AccountViewModel" />
@@ -24,7 +29,8 @@
             android:background="@drawable/vegetable"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
         <LinearLayout
             android:id="@+id/layoutLogin"
@@ -41,7 +47,7 @@
             <TextView
                 android:layout_width="@dimen/_140sdp"
                 android:layout_height="wrap_content"
-                android:text="Get your groceries with nectar"
+                android:text="@string/get_your_grocer"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -54,14 +60,14 @@
                 app:hintEnabled="true">
 
                 <EditText
-                    android:inputType="textNoSuggestions"
                     android:id="@+id/edtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Email"
+                    android:hint="@string/email"
+                    android:inputType="textNoSuggestions"
                     android:singleLine="true"
                     android:text="@={account.usernameLogin}"
-                    tools:ignore="TextFields" />
+                    tools:ignore="Autofill,TextFields" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -76,10 +82,11 @@
                     android:id="@+id/edtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Password"
+                    android:hint="@string/password"
                     android:inputType="textPassword"
                     android:singleLine="true"
-                    android:text="@={account.passwordLogin}" />
+                    android:text="@={account.passwordLogin}"
+                    tools:ignore="Autofill" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -94,11 +101,11 @@
                 android:textSize="14sp" />
 
             <LinearLayout
-                android:onClick="@{() -> account.clickLoginGoogle()}"
                 android:id="@+id/layoutGoogle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_button_google"
+                android:onClick="@{() -> account.clickLoginGoogle()}"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -124,13 +131,13 @@
             </LinearLayout>
 
             <LinearLayout
-                android:onClick="@{() -> account.clickLoginFacebook()}"
                 android:id="@+id/layoutFaceBook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginBottom="@dimen/_8sdp"
                 android:background="@drawable/background_button_facebook"
+                android:onClick="@{() -> account.clickLoginFacebook()}"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -157,11 +164,11 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/tvLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_button_default"
                 android:gravity="center"
-                android:id="@+id/tvLogin"
                 android:onClick="@{() -> account.clickLogin()}"
                 android:paddingTop="@dimen/_10sdp"
                 android:paddingBottom="@dimen/_10sdp"
@@ -186,7 +193,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign Up"
+                android:text="@string/sign_up"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -195,7 +202,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_6sdp"
                 android:layout_marginBottom="@dimen/_12sdp"
-                android:text="Enter your credentials to continue"
+                android:text="@string/enter_your_credentials_to_continue"
                 android:textSize="16sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -206,13 +213,14 @@
                 app:hintEnabled="true">
 
                 <EditText
-                    android:inputType="textNoSuggestions"
                     android:id="@+id/edtUsernameRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Username"
+                    android:hint="@string/username"
+                    android:inputType="textNoSuggestions"
                     android:singleLine="true"
-                    android:text="@={account.usernameRegister}" />
+                    android:text="@={account.usernameRegister}"
+                    tools:ignore="Autofill" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -226,9 +234,11 @@
                     android:id="@+id/edtEmailRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Email"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
                     android:singleLine="true"
-                    android:text="@={account.emailRegister}" />
+                    android:text="@={account.emailRegister}"
+                    tools:ignore="Autofill" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -243,10 +253,11 @@
                     android:id="@+id/edtPasswordRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Password"
+                    android:hint="@string/password"
                     android:inputType="textPassword"
                     android:singleLine="true"
-                    android:text="@={account.passwordRegister}" />
+                    android:text="@={account.passwordRegister}"
+                    tools:ignore="Autofill" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -259,14 +270,14 @@
                 android:text="@string/login_account" />
 
             <TextView
-                android:onClick="@{() -> account.clickSignUp()}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_button_default"
                 android:gravity="center"
+                android:onClick="@{() -> account.clickSignUp()}"
                 android:paddingTop="@dimen/_6sdp"
                 android:paddingBottom="@dimen/_8sdp"
-                android:text="Sing Up"
+                android:text="@string/sign_up"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
         </LinearLayout>

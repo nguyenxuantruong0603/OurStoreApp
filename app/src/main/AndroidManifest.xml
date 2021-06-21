@@ -11,7 +11,7 @@
         android:theme="@style/Theme.OurStoreApp">
         <activity
             android:name=".view.activity.HomeActivity"
-            android:label="@string/title_activity_home"></activity>
+            android:label="@string/title_activity_home"/>
         <activity android:name=".view.activity.account.LoginActivity" />
         <activity android:name=".view.GetStartedActivity" />
         <activity
@@ -23,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

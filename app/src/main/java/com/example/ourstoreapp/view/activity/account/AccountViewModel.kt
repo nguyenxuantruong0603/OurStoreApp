@@ -5,55 +5,52 @@ import android.content.Intent
 import android.text.TextUtils
 import android.util.Log
 import android.util.Patterns
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.ourstoreapp.util.UtilClass.showToast
 import com.example.ourstoreapp.view.activity.HomeActivity
 
-class AccountViewModel(private val context: Context) : ViewModel() {
+class AccountViewModel(val context: Context) : ViewModel() {
 
-    var usernameLogin = MutableLiveData<String>()
-    var passwordLogin = MutableLiveData<String>()
+    var usernameLogin = MutableLiveData<String>().apply { value = "truongnx" }
+    var passwordLogin = MutableLiveData<String>().apply { value = "Xtruong" }
     var usernameRegister = MutableLiveData<String>()
     var passwordRegister = MutableLiveData<String>()
     var emailRegister = MutableLiveData<String>()
 
     fun clickLogin() {
-
         if (usernameLogin.value == null || passwordLogin.value == null || usernameLogin.value == "" || passwordLogin.value == "") {
-            Toast.makeText(context, "Không được bỏ trống", Toast.LENGTH_LONG).show()
+            showToast(context, "Không được bỏ trống")
 
         } else if (usernameLogin.value == "truongnx" && passwordLogin.value == "Xtruong") {
-            Toast.makeText(context, "Đăng nhập thành công ", Toast.LENGTH_LONG).show()
+            showToast(context, "Đăng nhập thành công")
             context.startActivity(Intent(context, HomeActivity::class.java))
 
         } else {
-            Toast.makeText(context, "Tài khoản hoặc mật khẩu không đúng", Toast.LENGTH_LONG).show()
+            showToast(context, "Tài khoản hoặc mật khẩu không đúng")
         }
     }
-
-
     fun clickLoginGoogle() {
-        Toast.makeText(context, "Login Google", Toast.LENGTH_SHORT).show()
+        showToast(context, "Login With Google")
     }
 
     fun clickLoginFacebook() {
-        Toast.makeText(context, "Login Facebook", Toast.LENGTH_SHORT).show()
+        showToast(context, "Login With Facebook")
     }
 
     fun clickSignUp() {
 
         Log.e("DATA", emailRegister.value.toString())
         if (usernameRegister.value == null || passwordRegister.value == null || emailRegister.value == null) {
-            Toast.makeText(context, "Không được bỏ trống", Toast.LENGTH_SHORT).show()
+            showToast(context, "Không được bỏ trống")
         } else if (usernameRegister.value == "" || passwordRegister.value == "" || emailRegister.value == "") {
-            Toast.makeText(context, "Không được bỏ trống", Toast.LENGTH_SHORT).show()
+            showToast(context, "Không được bỏ trống")
         } else if (passwordRegister.value!!.length < 6) {
-            Toast.makeText(context, "Mật khẩu phải hơn 6 ký tự", Toast.LENGTH_SHORT).show()
+            showToast(context, "Mật khẩu phải hơn 6 ký tự")
         } else if (!isValidEmail(emailRegister.value)) {
-            Toast.makeText(context, "Email sai định dạng", Toast.LENGTH_SHORT).show()
+            showToast(context, "Email sai định dạng")
         } else {
-            Toast.makeText(context, "Hello Babe", Toast.LENGTH_SHORT).show()
+            showToast(context, "Hello Babe")
         }
     }
 
