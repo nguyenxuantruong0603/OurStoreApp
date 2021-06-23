@@ -20,14 +20,14 @@ class AccountViewModel(val context: Context) : ViewModel() {
 
     fun clickLogin() {
         if (usernameLogin.value == null || passwordLogin.value == null || usernameLogin.value == "" || passwordLogin.value == "") {
-            showToast(context, "Không được bỏ trống")
+            showToast(context, "Not be empty")
 
         } else if (usernameLogin.value == "truongnx" && passwordLogin.value == "Xtruong") {
-            showToast(context, "Đăng nhập thành công")
+            showToast(context, "Login Success")
             context.startActivity(Intent(context, HomeActivity::class.java))
 
         } else {
-            showToast(context, "Tài khoản hoặc mật khẩu không đúng")
+            showToast(context, "Username or password incorrect")
         }
     }
     fun clickLoginGoogle() {
@@ -40,26 +40,19 @@ class AccountViewModel(val context: Context) : ViewModel() {
 
     fun clickSignUp() {
 
-        Log.e("DATA", emailRegister.value.toString())
         if (usernameRegister.value == null || passwordRegister.value == null || emailRegister.value == null) {
-            showToast(context, "Không được bỏ trống")
+            showToast(context, "Not be empty")
         } else if (usernameRegister.value == "" || passwordRegister.value == "" || emailRegister.value == "") {
-            showToast(context, "Không được bỏ trống")
+            showToast(context, "Not be empty")
         } else if (passwordRegister.value!!.length < 6) {
-            showToast(context, "Mật khẩu phải hơn 6 ký tự")
+            showToast(context, "Password must be more than 6 characters")
         } else if (!isValidEmail(emailRegister.value)) {
-            showToast(context, "Email sai định dạng")
+            showToast(context, "Invalid Email")
         } else {
             showToast(context, "Hello Babe")
         }
     }
 
-    /*
-    @BindingAdapter("app:goneUnless")
-    fun goneUnless(view: View, visible: Boolean) {
-    view.visibility = if (visible) View.VISIBLE else View.GONE
-    }
-    */
     private fun isValidEmail(target: CharSequence?): Boolean {
         return !TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target)
             .matches()

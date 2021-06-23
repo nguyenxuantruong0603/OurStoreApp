@@ -28,4 +28,14 @@
     <string name="logout">Log Out</string>
     <string name="nguyen_xuan_truong">Nguyễn Xuân Trường</string>
     <string name="email_truong">n.truong0702@gmail.com</string>
+    <string name="payment">Payment</string>
+    <string name="your_card_number">Your Card Number</string>
+    <string name="credit_card">Credit Card</string>
+    <string name="debit_card">Debit Card</string>
+    <string name="cash_pay">Cash Pay</string>
+    <string name="authorize_uber_for_rs_2000">Authorize UBer For <b>RS.2000</b></string>
+    <string name="we_accept">We Accept</string>
+    <string name="card_password">Card Password</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="authorize">Authorize</string>
 </resources>

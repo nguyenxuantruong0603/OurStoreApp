@@ -39,15 +39,5 @@ class LoginActivity : AppCompatActivity() {
             layoutRegister.visibility = View.GONE
         }
 
-//        tvLogin.setOnClickListener {
-//            var email: String = edtEmail.text.toString()
-//            var password: String = edtPassword.text.toString()
-//            Log.e("DATAA2","$email | $password")
-//            if (email == "" || password == "") {
-//                Toast.makeText(this, "deo dc bo trong", Toast.LENGTH_SHORT).show()
-//            } else
-//                Toast.makeText(this,"ok",Toast.LENGTH_SHORT).show()
-//        }
-
     }
 }
