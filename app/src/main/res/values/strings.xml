@@ -38,4 +38,25 @@
     <string name="card_password">Card Password</string>
     <string name="expiry_date">Expiry Date</string>
     <string name="authorize">Authorize</string>
+    <string name="update_account">Update Account</string>
+    <string name="your_full_name">Your full name</string>
+    <string name="your_email">Your Email</string>
+    <string name="change_info">Change Info</string>
+    <string name="master_card">Master Card</string>
+    <string name="discover">Discover</string>
+    <string name="maestro">Maestro</string>
+    <string name="visa">Visa</string>
+    <string name="address_hanoi_vietnam">Address: Hà Nội - Việt Nam</string>
+    <string name="sex_male">Sex: Male</string>
+    <string name="age_22">Age: 22</string>
+    <string name="profile">PROFILE</string>
+    <string name="jack_hughman">Jack Hughman</string>
+    <string name="developer">Android Developer</string>
+    <string name="_1_603_200">1.603.200</string>
+    <string name="_99">99</string>
+    <string name="_3060">3060</string>
+    <string name="gender_male">Gender: Male</string>
+    <string name="phone_0396036610">Phone: 0396036610</string>
+    <string name="address_ha_noi_viet_nam">Address: Ha Noi - Viet Nam</string>
+    <string name="_0237_6666">0237 **** **** 6666</string>
 </resources>

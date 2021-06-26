@@ -4,11 +4,15 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.text.TextUtils
+import android.util.Log
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.ourstoreapp.R
@@ -86,5 +90,63 @@ class AccountFragmentViewModel(
             }
         }
         dialog.show()
+    }
+
+    fun onClickUpdateAccount() {
+        val builder = AlertDialog.Builder(context)
+        val view = layoutInflater.inflate(R.layout.dialog_update_account, null)
+        builder.setView(view)
+        val dialog = builder.create()
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val edtYourFullNameUpdate: EditText = view.findViewById(R.id.edtYourFullNameUpdate)
+        val edtYourEmailUpdate: EditText = view.findViewById(R.id.edtYourEmailUpdate)
+        val tvChangeInfo: TextView = view.findViewById(R.id.tvChangeInfo)
+
+        tvChangeInfo.setOnClickListener {
+            if (edtYourEmailUpdate.text.toString() == "" || edtYourFullNameUpdate.text.toString() == "") {
+                showToast(context, "Not be empty")
+            } else if (!isValidEmail(edtYourEmailUpdate.text.toString())) {
+                showToast(context, "Invalid Email")
+            } else {
+                showToast(context, "Change info success")
+
+                fullName.postValue(edtYourFullNameUpdate.text.toString())
+                email.postValue(edtYourEmailUpdate.text.toString())
+
+                Log.e("DATA_UPDATE", fullName.value + " | " + email.value)
+                Log.e(
+                    "DATA_UPDATE2",
+                    edtYourFullNameUpdate.text.toString() + " | " + edtYourEmailUpdate.text.toString()
+                )
+                dialog.dismiss()
+
+            }
+        }
+        dialog.show()
+    }
+
+    fun onClickShowDetailAccount() {
+        val builder = AlertDialog.Builder(context)
+        val view = layoutInflater.inflate(R.layout.dialog_detail_account, null)
+        val dialog = builder.create()
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        builder.setView(view)
+
+        val layoutMoney = view.findViewById<LinearLayout>(R.id.layoutMoney)
+        val layoutStar = view.findViewById<LinearLayout>(R.id.layoutStar)
+        val layoutCart = view.findViewById<LinearLayout>(R.id.layoutCart)
+
+        layoutCart.setOnClickListener { showToast(context,"You have 99 order has been paid") }
+        layoutStar.setOnClickListener { showToast(context,"You have 3060 star") }
+        layoutMoney.setOnClickListener { showToast(context,"Your balance is 16032000 Vnđ") }
+
+        builder.create().show()
+
+    }
+
+    private fun isValidEmail(target: CharSequence?): Boolean {
+        return !TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target)
+            .matches()
     }
 }
