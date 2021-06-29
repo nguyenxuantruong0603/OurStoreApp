@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <!--        <variable-->
-        <!--            name="food"-->
-        <!--            type="com.example.ourstoreapp.datamodel." />-->
+                <variable
+                    name="food"
+                    type="com.example.ourstoreapp.datamodel.Food" />
     </data>
 
     <LinearLayout
@@ -17,7 +17,7 @@
         <ImageView
             android:layout_width="@dimen/_64sdp"
             android:layout_height="@dimen/_80sdp"
-            android:src="@drawable/avatar" />
+            android:src="@{food.foodImage}" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -32,7 +32,7 @@
                 android:id="@+id/tvFoodName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bell Pepper Red"
+                android:text="@{food.foodName}"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:text="Bell Pepper Red"
+                android:text="@{food.foodWeight}"
                 android:textSize="12sp" />
         </LinearLayout>
 
@@ -51,11 +51,12 @@
             android:layout_gravity="center"
             android:layout_marginEnd="@dimen/_8sdp"
             android:layout_marginRight="@dimen/_8sdp"
-            android:text="$1.50"
+            android:text="@{food.foodPrice}"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
         <ImageView
+
             android:layout_marginRight="@dimen/_12sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
