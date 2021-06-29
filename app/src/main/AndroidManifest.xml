@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OurStoreApp">
-        <activity android:name=".view.activity.payment.PaymentMethodActivity"></activity>
+        <activity android:name=".view.activity.detailfood.DetailFoodActivity"></activity>
+        <activity android:name=".view.activity.payment.PaymentMethodActivity" />
         <activity
             android:name=".view.activity.HomeActivity"
             android:label="@string/title_activity_home" />
