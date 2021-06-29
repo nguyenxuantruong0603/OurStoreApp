@@ -1,4 +1,4 @@
-package com.example.ourstoreapp.adapter
+package com.example.ourstoreapp.adapter.viewpager
 
 import android.view.LayoutInflater
 import android.view.View
