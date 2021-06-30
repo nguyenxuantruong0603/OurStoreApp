@@ -35,6 +35,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvFavourite" />
 
         <androidx.recyclerview.widget.RecyclerView
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:id="@+id/rcFavourite"
             android:layout_width="match_parent"
             android:layout_height="0dp"

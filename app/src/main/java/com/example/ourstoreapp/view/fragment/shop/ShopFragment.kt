@@ -17,6 +17,7 @@ import com.example.ourstoreapp.databinding.FragmentShopBinding
 import com.example.ourstoreapp.datamodel.Banner
 import com.example.ourstoreapp.datamodel.Food
 import com.example.ourstoreapp.listener.IClickFoodAdapter
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_shop.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -33,14 +34,6 @@ class ShopFragment : Fragment() {
     private var listBanner = ArrayList<Banner>()
     private var listFood = ArrayList<Food>()
 
-
-//    private val listImage = listOf(
-//        Banner(R.drawable.logo1),
-//        Banner(R.drawable.logo2),
-//        Banner(R.drawable.logo3),
-//        Banner(R.drawable.logo4),
-//        Banner(R.drawable.logo5)
-//    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -88,10 +81,6 @@ class ShopFragment : Fragment() {
         listBanner.add(Banner(R.drawable.logo3))
         listBanner.add(Banner(R.drawable.logo4))
         listBanner.add(Banner(R.drawable.logo5))
-    }
-
-    private fun initDataFruit(){
-        
     }
 
     private fun autoSlideImage() {

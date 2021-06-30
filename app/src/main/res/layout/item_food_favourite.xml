@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-                <variable
-                    name="food"
-                    type="com.example.ourstoreapp.datamodel.Food" />
+
+        <variable
+            name="food"
+            type="com.example.ourstoreapp.datamodel.Food" />
     </data>
 
     <LinearLayout
@@ -15,9 +17,11 @@
         android:weightSum="1">
 
         <ImageView
+            app:imageUrl="@{food.foodImage}"
             android:layout_width="@dimen/_64sdp"
             android:layout_height="@dimen/_80sdp"
-            android:src="@{food.foodImage}" />
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/apple" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -34,7 +38,8 @@
                 android:layout_height="wrap_content"
                 android:text="@{food.foodName}"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="I Have An Apple" />
 
             <TextView
                 android:id="@+id/tvFoodWeight"
@@ -42,7 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:text="@{food.foodWeight}"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                tools:text="650Gram" />
         </LinearLayout>
 
         <TextView
@@ -51,18 +57,19 @@
             android:layout_gravity="center"
             android:layout_marginEnd="@dimen/_8sdp"
             android:layout_marginRight="@dimen/_8sdp"
-            android:text="@{food.foodPrice}"
+            android:text="@{@string/generic_price(food.foodPrice)}"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:text="$ 3.25" />
 
         <ImageView
-
-            android:layout_marginRight="@dimen/_12sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/ic_arrow_right"
             android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:background="@drawable/ic_arrow_right"
             tools:ignore="ContentDescription" />
     </LinearLayout>
+
 </layout>

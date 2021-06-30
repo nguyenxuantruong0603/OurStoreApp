@@ -1,22 +1,29 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">OurStoreApp</string>
+    <string name="generic_price">$ %.2f</string>
+
+    -- Login, Register Activity --
     <string name="register_account">Do not have Account? <u><i>Register Now</i></u></string>
     <string name="continue_with_google">Continue with Google</string>
     <string name="continue_with_facebook">Continue with Facebook</string>
     <string name="login">Log In</string>
     <string name="login_account">Already have an account? <u><i>Login now</i></u></string>
     <string name="title_activity_home">MainActivity</string>
-    <string name="title_shop">Shop</string>
-    <string name="title_explore">Explore</string>
-    <string name="title_cart">Cart</string>
-    <string name="title_favourite">Favourite</string>
-    <string name="title_account">Account</string>
     <string name="get_your_grocer">Get your groceries with nectar</string>
     <string name="password">Password</string>
     <string name="sign_up">Sign Up</string>
     <string name="enter_your_credentials_to_continue">Enter your credentials to continue</string>
     <string name="username">Username</string>
     <string name="email">Email</string>
+
+    -- Home Activity --
+    <string name="title_shop">Shop</string>
+    <string name="title_explore">Explore</string>
+    <string name="title_cart">Cart</string>
+    <string name="title_favourite">Favourite</string>
+    <string name="title_account">Account</string>
+
+    -- Fragment Account --
     <string name="orders">Orders</string>
     <string name="my_details">My Details</string>
     <string name="delivery_address">Delivery Address</string>
@@ -59,7 +66,12 @@
     <string name="phone_0396036610">Phone: 0396036610</string>
     <string name="address_ha_noi_viet_nam">Address: Ha Noi - Viet Nam</string>
     <string name="_0237_6666">0237 **** **** 6666</string>
+
+    -- Fragment Shop --
     <string name="exclusive">Exclusive</string>
     <string name="see_all">See All</string>
     <string name="best_selling">Best Selling</string>
+    <string name="favourite">Favourite</string>
+    <string name="add_all_to_cart">Add All To Cart</string>
+    <string name="add_to_basket">Add To Basket</string>
 </resources>

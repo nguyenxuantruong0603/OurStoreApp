@@ -1,5 +1,6 @@
 package com.example.ourstoreapp.adapter.recycleview
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +18,10 @@ class FoodFavouriteAdapter(private val favouriteFoodList: List<Food>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+
+        Log.e("onCreateViewHolder","onCreateViewHolder")
+
+
         return Holder(
             ItemFoodFavouriteBinding.inflate(
                 LayoutInflater.from(parent.context),
