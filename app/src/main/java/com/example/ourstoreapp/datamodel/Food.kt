@@ -1,5 +1,7 @@
 package com.example.ourstoreapp.datamodel
 
+import java.io.Serializable
+
 class Food(
     val foodName: String,
     val foodType: String,
@@ -8,4 +10,4 @@ class Food(
     val foodEvaluate: Int,
     val foodWeight: String,
     val foodImage: String
-)
+) : Serializable

@@ -1,7 +1,7 @@
 package com.example.ourstoreapp.view.fragment.favourite
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +13,8 @@ import com.example.ourstoreapp.R
 import com.example.ourstoreapp.adapter.recycleview.FoodFavouriteAdapter
 import com.example.ourstoreapp.databinding.FragmentFavouriteBinding
 import com.example.ourstoreapp.datamodel.Food
+import com.example.ourstoreapp.listener.IClickOpenDetailFood
+import com.example.ourstoreapp.view.activity.detailfood.DetailFoodActivity
 
 class FavouriteFragment : Fragment() {
     private lateinit var favouriteViewModel: FavouriteViewModel
@@ -24,12 +26,24 @@ class FavouriteFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         val binding: FragmentFavouriteBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_favourite, container, false)
 
-        foodFavouriteAdapter = FoodFavouriteAdapter(foodList)
+        foodFavouriteAdapter = FoodFavouriteAdapter(foodList, object : IClickOpenDetailFood {
+            override fun openDetail(food: Food) {
+                val intent = Intent(context, DetailFoodActivity::class.java)
+//                intent.putExtra("FOODNAME", food.foodName)
+//                intent.putExtra("FOODPRICE", food.foodPrice)
+//                intent.putExtra("FOODDES", food.foodDescription)
+//                intent.putExtra("FOODWEIGHT", food.foodWeight)
+//                intent.putExtra("FOODIMAGE", food.foodImage)
+                intent.putExtra("FOOD_DATA", food)
+                startActivity(intent)
+            }
+
+        })
 
         val dividerItemDecoration =
             DividerItemDecoration(context, DividerItemDecoration.VERTICAL)

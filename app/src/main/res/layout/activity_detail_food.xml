@@ -16,16 +16,18 @@
         tools:context=".view.activity.detailfood.DetailFoodActivity">
 
         <ImageView
+            tools:src="@drawable/apple"
             android:id="@+id/imgFoodPicture"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_200sdp"
-            android:src="@drawable/avatar"
+            app:imageUrl="@{detailFood.foodImage}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription" />
 
         <androidx.appcompat.widget.Toolbar
+            android:layout_marginTop="@dimen/_14sdp"
             android:id="@+id/toolbarDetailFood"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_32sdp"
@@ -34,20 +36,22 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:layout_marginTop="@dimen/_16sdp"
             android:layout_width="@dimen/_24sdp"
             android:layout_height="@dimen/_24sdp"
-            android:layout_margin="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
             android:background="@drawable/ic_arrow_down"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription"
+            android:layout_marginRight="@dimen/_4sdp" />
 
         <TextView
+            android:text="@{detailFood.foodName}"
             android:id="@+id/tvFoodName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_16sdp"
-            android:text="Naturel Red Apple"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,11 +60,11 @@
             app:layout_constraintTop_toBottomOf="@id/imgFoodPicture" />
 
         <TextView
+            android:text="@{detailFood.foodWeight}"
             android:id="@+id/tvFoodWeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp"
-            android:text="Naturel Red Apple"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/tvFoodName"
             app:layout_constraintTop_toBottomOf="@id/tvFoodName" />
@@ -114,7 +118,7 @@
                     android:paddingTop="@dimen/_4sdp"
                     android:paddingEnd="@dimen/_8sdp"
                     android:paddingBottom="@dimen/_4sdp"
-                    android:text="@{detailFood.countFood.toString()}"
+                    android:text="@{detailFood.foodCount.toString()}"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -128,13 +132,13 @@
             </LinearLayout>
 
             <TextView
+                android:text="@{@string/generic_price(detailFood.foodPrice)}"
                 android:id="@+id/tvPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:layout_marginRight="@dimen/_12sdp"
-                android:text="$4.99"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
         </LinearLayout>

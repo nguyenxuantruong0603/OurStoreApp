@@ -1,26 +1,26 @@
 package com.example.ourstoreapp.adapter.recycleview
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ourstoreapp.databinding.ItemFoodFavouriteBinding
 import com.example.ourstoreapp.datamodel.Food
+import com.example.ourstoreapp.listener.IClickOpenDetailFood
 
-class FoodFavouriteAdapter(private val favouriteFoodList: List<Food>) :
+class FoodFavouriteAdapter(
+    private val favouriteFoodList: List<Food>,
+    private val iClickOpenDetailFood: IClickOpenDetailFood
+) :
     RecyclerView.Adapter<FoodFavouriteAdapter.Holder>() {
 
-
     class Holder(var binding: ItemFoodFavouriteBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun binFavourite(foodValue: Food) {
+        fun binFavourite(foodValue: Food, iClickOpenDetailFood: IClickOpenDetailFood) {
             binding.food = foodValue
+            itemView.setOnClickListener { iClickOpenDetailFood.openDetail(foodValue) }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-
-        Log.e("onCreateViewHolder","onCreateViewHolder")
-
 
         return Holder(
             ItemFoodFavouriteBinding.inflate(
@@ -34,7 +34,8 @@ class FoodFavouriteAdapter(private val favouriteFoodList: List<Food>) :
     override fun getItemCount(): Int = favouriteFoodList.size
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.binFavourite(favouriteFoodList[position])
+        holder.binFavourite(favouriteFoodList[position], iClickOpenDetailFood)
+
     }
 
 }

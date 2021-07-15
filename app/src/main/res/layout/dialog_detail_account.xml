@@ -117,12 +117,12 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:singleLine="true"
                     android:id="@+id/tvAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="88dp"
-                    android:layout_marginLeft="88dp"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginLeft="64dp"
+                    android:singleLine="true"
                     android:text="@string/address_ha_noi_viet_nam"
                     android:textColor="@color/white"
                     android:textSize="14sp"
@@ -170,7 +170,7 @@
                 <ImageView
                     android:layout_width="@dimen/_32sdp"
                     android:layout_height="@dimen/_32sdp"
-                    android:background="@drawable/visa"
+                    android:src="@drawable/visa"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -193,7 +193,7 @@
                 <ImageView
                     android:layout_width="@dimen/_32sdp"
                     android:layout_height="@dimen/_32sdp"
-                    android:background="@drawable/maestro_logo"
+                    android:src="@drawable/maestro_logo"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -216,7 +216,7 @@
                 <ImageView
                     android:layout_width="@dimen/_32sdp"
                     android:layout_height="@dimen/_32sdp"
-                    android:background="@drawable/discover"
+                    android:src="@drawable/discover"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -239,7 +239,7 @@
                 <ImageView
                     android:layout_width="@dimen/_32sdp"
                     android:layout_height="@dimen/_32sdp"
-                    android:background="@drawable/master_card"
+                    android:src="@drawable/master_card"
                     tools:ignore="ContentDescription" />
 
                 <TextView
