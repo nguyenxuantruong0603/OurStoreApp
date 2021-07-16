@@ -3,7 +3,7 @@ package com.example.ourstoreapp.view.activity.detailfood
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.ourstoreapp.datamodel.Food
+import com.example.ourstoreapp.datamodel.food.Food
 import com.example.ourstoreapp.util.UtilClass.showToast
 
 class DetailFoodViewModel(private val context: Context, val food: Food) : ViewModel() {

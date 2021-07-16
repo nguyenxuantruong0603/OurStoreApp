@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.example.ourstoreapp.R
 import com.example.ourstoreapp.databinding.ActivityDetailFoodBinding
-import com.example.ourstoreapp.datamodel.Food
+import com.example.ourstoreapp.datamodel.food.Food
 
 class DetailFoodActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

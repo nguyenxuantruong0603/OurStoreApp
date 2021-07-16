@@ -15,12 +15,10 @@ import com.example.ourstoreapp.adapter.recycleview.FoodAdapter
 import com.example.ourstoreapp.adapter.viewpager.ViewPagerAdapter
 import com.example.ourstoreapp.databinding.FragmentShopBinding
 import com.example.ourstoreapp.datamodel.Banner
-import com.example.ourstoreapp.datamodel.Food
+import com.example.ourstoreapp.datamodel.food.Food
 import com.example.ourstoreapp.listener.IClickFoodAdapter
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_shop.*
 import java.util.*
-import kotlin.collections.ArrayList
 
 class ShopFragment : Fragment() {
 

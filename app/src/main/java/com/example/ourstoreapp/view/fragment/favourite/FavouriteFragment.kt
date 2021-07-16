@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.ourstoreapp.R
 import com.example.ourstoreapp.adapter.recycleview.FoodFavouriteAdapter
 import com.example.ourstoreapp.databinding.FragmentFavouriteBinding
-import com.example.ourstoreapp.datamodel.Food
+import com.example.ourstoreapp.datamodel.food.Food
 import com.example.ourstoreapp.listener.IClickOpenDetailFood
 import com.example.ourstoreapp.view.activity.detailfood.DetailFoodActivity
 

@@ -7,7 +7,7 @@
 
         <variable
             name="food"
-            type="com.example.ourstoreapp.datamodel.Food" />
+            type="com.example.ourstoreapp.datamodel.food.Food" />
 
     </data>
 
