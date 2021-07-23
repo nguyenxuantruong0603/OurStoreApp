@@ -14,7 +14,7 @@ interface IFoodDao {
     fun getAllFood(): Flow<List<Food>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(food: Food)
+    suspend fun insertFood(food: Food)
 
     @Query("DELETE FROM food")
     suspend fun deleteAllFood()

@@ -1,9 +1,16 @@
 package com.example.ourstoreapp.datamodel.food
 
+import androidx.annotation.WorkerThread
 import com.example.ourstoreapp.sqlite.IFoodDao
-import java.util.concurrent.Flow
+import kotlinx.coroutines.flow.Flow
 
-class FoodRepository(foodDao: IFoodDao) {
+class FoodRepository(private val foodDao: IFoodDao) {
 
     val allFood: Flow<List<Food>> = foodDao.getAllFood()
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun insert(food: Food) {
+        foodDao.insertFood(food)
+    }
 }

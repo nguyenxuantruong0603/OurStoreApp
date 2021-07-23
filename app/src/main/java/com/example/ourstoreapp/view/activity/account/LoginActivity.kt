@@ -8,6 +8,7 @@ import android.view.WindowManager
 import androidx.databinding.DataBindingUtil
 import com.example.ourstoreapp.R
 import com.example.ourstoreapp.databinding.ActivityLoginBinding
+import com.example.ourstoreapp.datamodel.user.UserRepository
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -16,14 +17,18 @@ class LoginActivity : AppCompatActivity() {
 
         val binding: ActivityLoginBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_login)
+
+        val userRepository: UserRepository = UserRepository()
+
         val accountViewModel =
-            AccountViewModel(this)
+            AccountViewModel(this,userRepository)
         binding.account = accountViewModel
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             window.setFlags(
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+
             )
         }
 

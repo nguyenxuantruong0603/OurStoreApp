@@ -1,4 +1,4 @@
-package com.example.ourstoreapp.datamodel
+package com.example.ourstoreapp.datamodel.mycart
 
 class MyCart(
     val userName: String,

@@ -1,7 +1,7 @@
 package com.example.ourstoreapp.sqlite
 
 import androidx.room.*
-import com.example.ourstoreapp.datamodel.User
+import com.example.ourstoreapp.datamodel.user.User
 import kotlinx.coroutines.flow.Flow
 
 @Dao

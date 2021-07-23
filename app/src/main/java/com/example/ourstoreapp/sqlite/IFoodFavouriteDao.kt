@@ -9,13 +9,13 @@ import kotlinx.coroutines.flow.Flow
 interface IFoodFavouriteDao {
 
     @Query("SELECT * FROM foodFavourite")
-    fun getAllFood(): Flow<List<Food>>
+    fun getAllFoodFavourite(): Flow<List<FoodFavourite>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(food: Food)
+    suspend fun insertFoodFavourite(food: FoodFavourite)
 
     @Query("DELETE FROM foodFavourite")
-    suspend fun deleteAllFood()
+    suspend fun deleteAllFoodFavourite()
 
     @Delete
     suspend fun deleteFavouriteByKey(favourite: FoodFavourite)
